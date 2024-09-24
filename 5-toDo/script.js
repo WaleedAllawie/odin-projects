@@ -4,7 +4,7 @@ const taskList = document.getElementById("tasklist");
 
 function addTask(){
     if (TaskBox.value===''){
-        alert("Enter task firt!");
+        alert("Enter a task first!");
     }
     else{
         let newTask = document.createElement("li");
@@ -35,3 +35,9 @@ function setData(){
 (function getData(){
     taskList.innerHTML=localStorage.getItem("data");
 }());
+
+TaskBox.addEventListener("keydown",function(e){
+    if (e.key=="Enter"){
+        AddButton.click();
+    }
+})
